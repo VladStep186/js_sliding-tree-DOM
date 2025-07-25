@@ -14,11 +14,16 @@ for (const li of tree.querySelectorAll('li')) {
   li.replaceChild(span, text);
 }
 
-tree.onclick = function (evente) {
-  const li = evente.target.closest('li');
+tree.onclick = function (e) {
+  const li = e.target.closest('li');
+
+  if (!li) {
+    return;
+  }
+
   const ul = li.querySelector('ul');
 
-  if (evente.target.tagName !== 'SPAN') {
+  if (e.target.tagName !== 'SPAN') {
     return;
   }
 
