@@ -1,11 +1,5 @@
 'use strict';
 
-// const li = document.querySelectorAll('li');
-
-// for ()
-// if (!li.querySelector('ul')) {
-//   return;
-// }
 const tree = document.querySelector('.tree');
 
 for (const li of tree.querySelectorAll('li')) {
@@ -25,6 +19,10 @@ tree.onclick = function (evente) {
   const ul = li.querySelector('ul');
 
   if (evente.target.tagName !== 'SPAN') {
+    return;
+  }
+
+  if (ul === null || ul === undefined) {
     return;
   }
 
